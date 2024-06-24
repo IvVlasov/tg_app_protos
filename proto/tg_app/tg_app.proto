@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+package reverse;
+
+option go_package = "IvVlasov.tg_app.v1;tg_appv1";
+
+service Reverse {
+  rpc Login (LoginRequest) returns (LoginResponse);
+}
+
+message LoginRequest {
+  int64 chat_id = 1;
+  string username = 2; 
+}
+
+message LoginResponse {
+  int32 user_id = 1;
+}
