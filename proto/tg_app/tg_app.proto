@@ -1,5 +1,7 @@
 syntax = "proto3";
 
+import "google/protobuf/timestamp.proto";
+
 package reverse;
 
 option go_package = "IvVlasov.tg_app.v1;tg_appv1";
@@ -14,5 +16,8 @@ message LoginRequest {
 }
 
 message LoginResponse {
-  int32 user_id = 1;
+  int64 chat_id = 1;
+  string username = 2;
+  google.protobuf.Timestamp last_usage = 3;
+  google.protobuf.Timestamp registered = 4;
 }
